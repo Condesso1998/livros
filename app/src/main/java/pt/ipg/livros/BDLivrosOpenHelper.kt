@@ -11,12 +11,11 @@ class BDLivrosOpenHelper(
     factory: SQLiteDatabase.CursorFactory?,
     version: Int
 ) : SQLiteOpenHelper(context, name, factory, version) {
-    override fun onCreate(p0: SQLiteDatabase?) {
-      requireNotNull(db)
-
-
+    override fun onCreate(db: SQLiteDatabase?) {
+        requireNotNull(db)
 
         TabelaBDCategorias(db).cria()
+        TabelaBDLivros(db).cria()
 
 
     }
